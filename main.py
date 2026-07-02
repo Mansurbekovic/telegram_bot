@@ -4,7 +4,11 @@ import time
 import urllib.parse
 import urllib.request
 
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8766488720:AAEFFqzOUQcdzQ1ywvAjfP1VgoqUDSO2t88")
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
 
 if TOKEN == "YOUR_BOT_TOKEN_HERE":
     print("Bot tokenini o'zingizning Telegram bot tokeningiz bilan almashtiring.")
