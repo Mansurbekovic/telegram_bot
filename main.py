@@ -8,11 +8,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
-if TOKEN == "YOUR_BOT_TOKEN_HERE":
-    print("Bot tokenini o'zingizning Telegram bot tokeningiz bilan almashtiring.")
-    print("Masalan: $env:TELEGRAM_BOT_TOKEN='8766488720:AAEFFqzOUQcdzQ1ywvAjfP1VgoqUDSO2t88'")
+if not TOKEN:
+    print("Bot tokeni topilmadi. Renderga yuklash uchun TELEGRAM_BOT_TOKEN muhit o'zgaruvchisini qo'shing.")
+    print("Render Dashboard -> Environment -> Add Variable:")
+    print("  Name: TELEGRAM_BOT_TOKEN")
+    print("  Value: 123456:ABCDEF...")
     raise SystemExit(1)
 
 
